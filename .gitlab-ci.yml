@@ -5,6 +5,7 @@ build:
   stage: build
   before_script:
     - apt-get update -qq
+    - DEBIAN_FRONTEND="noninteractive" TZ="Etc/UTC" apt-get -qq -y install tzdata
     - apt-get install -y -qq gcc g++ make libusb-1.0-0-dev libboost-all-dev
   script:
     - make -j 2
