@@ -2,6 +2,7 @@
 stages:
   - build
 build:
+  stage: build
   before_script:
     - apt-get update -qq
     - apt-get install -y -qq gcc g++ make libusb-1.0-0-dev libboost-all-dev
