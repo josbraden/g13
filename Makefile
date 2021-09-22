@@ -1,6 +1,6 @@
 all: g13d pbm2lpbm
 
-FLAGS=$(CXXFLAGS) -DBOOST_LOG_DYN_LINK -std=c++0x
+FLAGS=$(CXXFLAGS) -DBOOST_LOG_DYN_LINK
 LIBS=-lusb-1.0 -lboost_log -lboost_log_setup-mt -lboost_thread -lboost_system-mt -lpthread
 
 g13.o: g13.h helper.hpp g13.cc
