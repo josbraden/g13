@@ -3,6 +3,8 @@ all: g13d pbm2lpbm
 FLAGS=$(CXXFLAGS) -DBOOST_LOG_DYN_LINK
 LIBS=-lusb-1.0 -lboost_log -lboost_log_setup-mt -lboost_thread -lboost_system-mt -lpthread
 
+release: FLAGS=$(CXXFLAGS) -DBOOST_LOG_DYN_LINK -O3
+
 g13.o: g13.h helper.hpp g13.cc
 	g++ $(FLAGS) -c g13.cc
 
@@ -39,12 +41,15 @@ g13d: g13_main.o g13.o g13_log.o g13_fonts.o g13_lcd.o g13_stick.o g13_keys.o he
 pbm2lpbm: pbm2lpbm.c
 	g++ -o pbm2lpbm pbm2lpbm.c
 
+release: all
+
 package:
 	rm -Rf g13-userspace
 	mkdir g13-userspace
 	cp g13.cc g13.h logo.h Makefile pbm2lpbm.c g13-userspace
 	tar cjf g13-userspace.tbz2 g13-userspace
 	rm -Rf g13-userspace
+
 clean: 
 	rm -f g13d pbm2lpbm
 	rm -f *.o
