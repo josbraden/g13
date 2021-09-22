@@ -788,7 +788,6 @@ int G13_Manager::run() {
 			}
 	} while (running);
 	cleanup();
+	return 0;
 }
 } // namespace G13
-
-
