@@ -2,6 +2,11 @@
 
 Josh's fork of ecraven/G13
 
+Changes from upstream:
+
+- Added gitlab CI job
+- Optimized compile target `make release`
+
 ## Installation
 
 Make sure you have boost and libusb-1.0 installed.
