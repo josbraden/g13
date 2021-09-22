@@ -1,5 +1,7 @@
 # Userspace driver for the G13
 
+Josh's fork of ecraven/G13
+
 ## Installation
 
 Make sure you have boost and libusb-1.0 installed.
