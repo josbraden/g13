@@ -26,17 +26,18 @@ namespace G13 {
 // *************************************************************************
 
 void G13_Device::send_event(int type, int code, int val) {
-
+	ssize_t ret;
 	memset(&_event, 0, sizeof(_event));
 	gettimeofday(&_event.time, 0 );
 	_event.type = type;
 	_event.code = code;
 	_event.value = val;
-	write(_uinput_fid, &_event, sizeof(_event));
+	ret = write(_uinput_fid, &_event, sizeof(_event));
 }
 
 void G13_Device::write_output_pipe( const std::string &out ) {
-	write( _output_pipe_fid, out.c_str(), out.size() );
+	ssize_t ret;
+	ret = write( _output_pipe_fid, out.c_str(), out.size() );
 }
 
 void G13_Device::set_mode_leds(int leds) {
