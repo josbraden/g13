@@ -12,8 +12,17 @@ flake8:
     - pip3 install flake8
   script:
     - flake8 *.py
-  build:
+py_compile:
+  stage: code
+  needs: []
+  before_script:
+    - apt update -qq
+    - apt install -y python3 -qq
+  script:
+    - python3 -m py_compile *.py
+build:
   stage: build
+  needs: []
   before_script:
     - apt-get update -qq
     - DEBIAN_FRONTEND="noninteractive" TZ="Etc/UTC" apt-get -qq -y install tzdata
