@@ -17,7 +17,7 @@
 	 A0.01 A1.01 A2.01 ...
  */
 
-#include "g13.h"
+#include "g13.hpp"
 #include "logo.h"
 
 using namespace std;
