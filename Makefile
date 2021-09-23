@@ -5,32 +5,31 @@ LIBS=-lusb-1.0 -lboost_log -lboost_log_setup-mt -lboost_thread -lboost_system-mt
 
 release: FLAGS=$(CXXFLAGS) -DBOOST_LOG_DYN_LINK -O3
 
-g13.o: g13.h helper.hpp g13.cc
-	g++ $(FLAGS) -c g13.cc
+g13.o: g13.h helper.hpp g13.cpp
+	g++ $(FLAGS) -c g13.cpp
 
-g13_main.o: g13.h helper.hpp g13_main.cc
-	g++ $(FLAGS) -c g13_main.cc
+g13_main.o: g13.h helper.hpp g13_main.cpp
+	g++ $(FLAGS) -c g13_main.cpp
 
 
-g13_log.o: g13.h helper.hpp g13_log.cc
-	g++ $(FLAGS) -c g13_log.cc
+g13_log.o: g13.h helper.hpp g13_log.cpp
+	g++ $(FLAGS) -c g13_log.cpp
 
-g13_fonts.o: g13.h helper.hpp g13_fonts.cc
-	g++ $(FLAGS) -c g13_fonts.cc
+g13_fonts.o: g13.h helper.hpp g13_fonts.cpp
+	g++ $(FLAGS) -c g13_fonts.cpp
 
-g13_lcd.o: g13.h helper.hpp g13_lcd.cc
-	g++ $(FLAGS) -c g13_lcd.cc
+g13_lcd.o: g13.h helper.hpp g13_lcd.cpp
+	g++ $(FLAGS) -c g13_lcd.cpp
 
-g13_stick.o: g13.h helper.hpp g13_stick.cc
-	g++ $(FLAGS) -c g13_stick.cc
+g13_stick.o: g13.h helper.hpp g13_stick.cpp
+	g++ $(FLAGS) -c g13_stick.cpp
 	
-g13_keys.o: g13.h helper.hpp g13_keys.cc
-	g++ $(FLAGS) -c g13_keys.cc
+g13_keys.o: g13.h helper.hpp g13_keys.cpp
+	g++ $(FLAGS) -c g13_keys.cpp
 
 helper.o: helper.hpp helper.cpp
 	g++ $(FLAGS) -c helper.cpp
-	
-	
+
 g13d: g13_main.o g13.o g13_log.o g13_fonts.o g13_lcd.o g13_stick.o g13_keys.o helper.o
 	g++ -o g13d \
 		g13_main.o g13.o g13_log.o g13_fonts.o g13_lcd.o g13_stick.o g13_keys.o helper.o \
@@ -38,11 +37,11 @@ g13d: g13_main.o g13.o g13_log.o g13_fonts.o g13_lcd.o g13_stick.o g13_keys.o he
 	 	-lboost_log    \
 	 	-lboost_system -lpthread
 
-pbm2lpbm: pbm2lpbm.c
-	g++ -o pbm2lpbm pbm2lpbm.c
+pbm2lpbm: pbm2lpbm.cpp
+	g++ -o pbm2lpbm pbm2lpbm.cpp
 
-pbm2lpbmRelease: pbm2lpbm.c
-	g++ -o pbm2lpbm -O3 pbm2lpbm.c
+pbm2lpbmRelease: pbm2lpbm.cpp
+	g++ -o pbm2lpbm -O3 pbm2lpbm.cpp
 
 release: g13d pbm2lpbmRelease
 
