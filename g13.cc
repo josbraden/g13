@@ -747,7 +747,7 @@ int G13_Manager::run() {
 		return 1;
 	}
 
-	libusb_set_debug(ctx, 3);
+	libusb_set_option(ctx, LIBUSB_OPTION_LOG_LEVEL, 3);
 	cnt = libusb_get_device_list(ctx, &devs);
 	if (cnt < 0) {
 		G13_LOG( error, "Error while getting device list" );
