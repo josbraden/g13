@@ -41,7 +41,10 @@ g13d: g13_main.o g13.o g13_log.o g13_fonts.o g13_lcd.o g13_stick.o g13_keys.o he
 pbm2lpbm: pbm2lpbm.c
 	g++ -o pbm2lpbm pbm2lpbm.c
 
-release: all
+pbm2lpbmRelease: pbm2lpbm.c
+	g++ -o pbm2lpbm -O3 pbm2lpbm.c
+
+release: g13d pbm2lpbmRelease
 
 package:
 	rm -Rf g13-userspace
