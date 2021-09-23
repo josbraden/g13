@@ -1,5 +1,5 @@
 #include "g13.hpp"
-#include "logo.h"
+#include "logo.hpp"
 #include <fstream>
 
 #if 0

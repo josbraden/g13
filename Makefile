@@ -48,7 +48,7 @@ release: g13d pbm2lpbmRelease
 package:
 	rm -Rf g13-userspace
 	mkdir g13-userspace
-	cp g13.cc g13.hpp logo.h Makefile pbm2lpbm.c g13-userspace
+	cp g13.cc g13.hpp logo.hpp Makefile pbm2lpbm.c g13-userspace
 	tar cjf g13-userspace.tbz2 g13-userspace
 	rm -Rf g13-userspace
 

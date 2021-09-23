@@ -18,7 +18,7 @@
  */
 
 #include "g13.hpp"
-#include "logo.h"
+#include "logo.hpp"
 
 using namespace std;
 
