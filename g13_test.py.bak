@@ -11,7 +11,7 @@ def doCmd( *cmd ):
 
 def get_sensors():
     sensor_lines = doCmd( 'sensors' ).split('\n')
-    print(( "sensor_lines = %r" % (sensor_lines,) ))
+    print( "sensor_lines = %r" % (sensor_lines,) )
     temp_re = re.compile( r'''([a-zA-Z])[a-zA-Z s]+([0-9])\:\s*\+([0-9.]+)[\xc2\xb0C]*C.*''' )
      
     temps = []
@@ -19,7 +19,7 @@ def get_sensors():
         m = temp_re.match(line)
         if m:
             tag, index, value = m.groups()
-            print(( "%s%s = %s" % (tag, index, value)))
+            print( "%s%s = %s" % (tag, index, value))
             #temps.append( "%s%s:%s" % (tag, index, value) )
             temps.append( "%s" % (value,) )
         # else:
