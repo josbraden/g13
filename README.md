@@ -6,6 +6,7 @@ Changes from upstream:
 
 - Added gitlab CI job
 - Optimized compile target `make release`
+- Fixed compilation warnings
 
 ## Installation
 
